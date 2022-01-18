@@ -1,0 +1,53 @@
+<a href="index.html">Voltar para página principal</a>
+
+<h1>Javascript sem classe</h1>
+
+<h2>ECMAScript 6</h2>
+
+<script>
+    // Definição da classe frutas 
+    class Fruit {
+
+        // Variaveis > Propriedade > atributos de
+        name;
+        color;
+
+        // Função > Ação > Método
+        setName(name) {   // Defini o nome do objeto
+            this.name = name; 
+        }
+
+        // Retorna o nome da fruta
+        getName() {
+            return this.name;
+        }
+
+        // Para definir a cor do objeto
+        setColor(color) {
+            this.color = color;
+        }
+
+        // Para retornar a cor do objeto
+        getColor() {
+            return this.color;
+        }
+
+    }
+
+</script>
+
+<script>
+
+    // Instancia > Objetos
+    var manga = new Fruit();
+    var banana = new Fruit();
+
+    // Setando atributos
+    manga.setName('Manga');
+    banana.setName('Banana');
+
+    // Executando métodos getName()
+    console.log(manga.getName());
+    console.log(banana.getName());
+
+</script>
