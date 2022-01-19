@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20220119</title>
+    
+</head>
+<body>
+
+    <h1>Exercicio de Class</h1>
+    <p>Crie uma classe para criar objetos do tipo "pessoa" que obtenha os atributos 'nome', 'login' e 'senha'. Instancie a classe para o objeto 'rodrigo' e teste o código. </p>
+    <p>Crie uma cópia da classe acima. Modifique-a para incluir os métodos 'getters' e 'setters' para os atributos. Teste o código.</p>
+    <p>Crie uma cópia da classe acima. Modifique-a para incluir o método construtor que já 'seta' o atributo 'name'. Teste o código.</p>
+    <script>
+
+        //classe é um modelo para criação de objetos.
+        class pessoa {
+
+            //atributos
+            name ; 
+            login ;
+            senha ; 
+
+            // Metodo construtor
+            constructor(name) {
+                this.setName(name);
+            }
+
+            // setter > metodo usado para atribuir valores para atributos.
+            setName(name) {
+                this.name = name;
+            }
+            
+            getName(name) {
+                return this.name;
+            }
+
+            setLogin(login) {
+                this.login = login;
+            }
+
+            getLogin(login) {
+                return this.login;
+            }
+
+            setSenha(senha) {
+                this.senha = senha;
+                
+            }
+
+            getSenha(senha) {
+                return this.senha;
+            }
+        }
+
+    </script>
+
+    <script>
+        // instancia classe > criar um objeto novo do tipo class
+        var Rodrigo = new pessoa('Rodrigo da silva');
+        
+        //exibindo valores dos atributos
+        console.log(Rodrigo.name, Rodrigo.login), Rodrigo.senha;
+
+        //alterando valores
+        Rodrigo.login = 'Rodrigo@gmail.com'
+        Rodrigo.senha = '12345'
+
+        Rodrigo.setName('Rodrigo da silva')
+        console.log(Rodrigo.setName())
+
+
+    </script>
+</body>
+</html>
