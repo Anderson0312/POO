@@ -1,0 +1,69 @@
+<script>
+
+    // classe car é um modelo para colocarmos variaves da nossa escolha
+    class Car {
+        brand;
+        model;
+
+        // set para atribuimos os valores e get para retornamos os valores
+        setBrand(brand) {
+            this.brand = brand;}
+        getBrand(brand) {
+            return this.brand; }
+        setModel(model) {
+            this.model = model;}
+        getModel(model) {
+            return this.model; }
+        }
+    
+    class utilit extends Car {
+        axis;
+        weight;
+        
+        setAxis(axis) {
+            this.axis = axis;}
+        getAxis(axis) { 
+            return this.axis}
+        setWeight(weight) { 
+            this.weight = weight}
+        getWeight(weight) { 
+            return this.weight}
+    }
+
+  
+    class Sport extends Car {
+        velocity;
+        cilinder;
+        
+        setVelocity(velocity) {
+            this.velocity = velocity;}
+        getVelocity(velocity) { 
+            return this.velocity}
+        setCilinder(cilinder) { 
+            this.cilinder = cilinder}
+        getCilinder(cilinder) {  
+            return this.cilinder}
+    }
+
+
+    // atribuindo novos elementos a class Car
+    var carro1 = new Car();
+    carro1.setBrand('fiat');
+    carro1.setModel('147');
+    console.log(carro1);
+
+    var carro2 = new utilit();
+    carro2.setBrand('mercedes')
+    carro2.setModel('1500')
+    carro2.setAxis(3)
+    carro2.setWeight(1000)
+    console.log(carro2);
+
+    var carro3 = new Sport();
+    carro3.setBrand('ferrari')
+    carro3.setModel('600')
+    carro3.setVelocity(450)
+    carro3.setCilinder(600)
+    console.log(carro3)
+
+</script>
