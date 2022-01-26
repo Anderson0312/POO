@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade</title>
+</head>
+<body>
+    
+    <script>
+        class Jogador {
+            #nome; 
+            #nascimento; 
+            #nacionalidade; 
+            #altura; 
+            #peso; 
+            #jogos;
+
+            constructor(nome) {
+                this.#nome = nome;
+            } 
+
+            setNome(nome) {
+                this.#nome = nome;
+            }
+
+            setNascimento(nascimento) {
+                this.#nascimento = nascimento;
+            }
+
+            setNacionalidade(nacionalidade) {
+                this.#nacionalidade = nacionalidade;
+            }
+
+            setAltura(altura) {
+                this.#altura = altura;
+            }
+
+            setPeso(peso) {
+                this.#peso =peso;
+            }
+
+            setJogos(jogos) {
+                this.#jogos = jogos;
+            }
+
+            getNome() {
+                return this.#nome;
+            }
+
+            getNascimento() {
+                return this.#nascimento;
+            }
+
+            getNascionalidade() {
+                return this.#nacionalidade;
+
+            }
+            getAltura() {
+                return this.#altura;   
+            }
+
+            getPeso() {
+                return this.#peso;
+            }
+
+            getJogos() {
+                return this.#jogos;
+            }
+
+            getDadosJogador() {
+                return {
+                    nome: this.getNome(),
+                    nascimento: this.getNascimento(),
+                    nascionalidade: this.getNascionalidade(),
+                    altura: this.getAltura(),
+                    peso: this.getPeso
+                }
+            }
+        }    
+        
+        
+
+        class Goleiro extends Jogador {
+            #golsBloqueados;
+            #golsVazados;
+            #penaltiesBloqueados;
+            #penaltiesVazados;
+
+            setGolsBloqueados(gols){
+                this.#golsBloqueados = gols;
+            }
+
+            setGolsVazados(gols){
+                this.#golsVazados = gols;
+            }
+
+            setPenaltiesBloqueados(gols){
+                this.#penaltiesBloqueados = gols;
+            } 
+
+            setPenaltiesVazados(gols){
+                this.#penaltiesVazados = gols;
+            }
+
+            getGolsBloqueados() {
+                return this.#golsBloqueados;
+            }
+
+            getGolsVazados() {
+                return this.#golsVazados;
+            }
+
+            getPenaltiesBloqueados() {
+                return this.#penaltiesBloqueados;
+            }
+
+            getPenaltiesVazados() {
+                return this.#penaltiesVazados;
+            }
+        }
+
+        class Atacante extends Jogador {
+            #golsFeitos;
+            #golsPerdidos;
+            #penaltiesCobrados;
+            #penaltiesPerdidos;
+
+            setGolsFeitos(gols) {
+                this.#golsFeitos = gols;
+            }
+
+            setGolsPerdidos(gols) {
+                this.#golsPerdidos = gols;
+            }
+
+            setPenaltiesCobrados(gols) {
+                this.#penaltiesCobrados = gols;
+            }
+
+            setPenaltiesPerdidos(gols) {
+                this.#penaltiesPerdidos = gols;
+            }
+
+            getGolsFeitos() {
+                return this.#golsFeitos;
+            }
+
+            getGolsPerdidos() {
+                return this.#golsPerdidos;
+            }
+
+            getPenaltiesCobrados() {
+                return this.#penaltiesCobrados;
+            }
+
+            getPenaltiesPerdidos() {
+                return this.#penaltiesPerdidos
+            }
+
+        }
+
+        var anderson = new Goleiro('Anderson moura')
+        anderson.setNascimento(new Date(2000, 02, 05));
+        anderson.setNacionalidade('Brasileiro');
+        anderson.setAltura(1.70);
+        anderson.setPeso(63.5);
+        anderson.setJogos(10)
+
+        if (typeof anderson.getDadosJogador() === 'object') {
+            console.log(anderson.getDadosJogador());
+        } else {
+            console.error('ERRO! algo não esta certo.')
+        }
+        
+        anderson.setGolsBloqueados(6);
+        anderson.setGolsVazados(3);
+        anderson.setPenaltiesBloqueados(1);
+        anderson.setPenaltiesVazados(0);
+
+        console.log (`Media de gols de ${anderson.getNome()} bloqueados por partidas:`,
+        (anderson.getGolsBloqueados() + anderson.getPenaltiesBloqueados()) / anderson.getJogos());
+        console.log(`Media de gols de ${anderson.getNome()} vazado por partida:`,
+        (anderson.getGolsVazados() + anderson.getPenaltiesVazados()) / anderson.getJogos())
+
+
+    </script>
+</body>
+</html>

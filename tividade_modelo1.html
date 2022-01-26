@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade</title>
+</head>
+<body>
+    
+    <script>
+        class jogador {
+            #nome; 
+            #nascimento; 
+            #nacionalidade; 
+            #altura; 
+            #peso; 
+
+            constructor(nome ) {
+                this.#nome = nome;
+            } 
+
+            setNome(nome) {
+                this.#nome = nome;
+            }
+
+            setNascimento(nascimento) {
+                this.#nascimento = nascimento;
+            }
+
+            setNacionalidade(nacionalidade) {
+                this.#nacionalidade = nacionalidade;
+            }
+
+            setAltura(altura) {
+                this.#altura = altura;
+            }
+
+            setPeso(peso) {
+                this.#peso =peso;
+            }
+
+            getNome() {
+                return this.#nome;
+            }
+
+            getNascimento() {
+                return this.#nascimento;
+            }
+
+            getNascionalidade() {
+                return this.#nacionalidade;
+
+            }
+            getAltura() {
+                return this.#altura;   
+            }
+
+            getPeso() {
+                return this.#peso;
+            }
+
+            getDadosJogador() {
+                return {
+                    nome: this.getNome(),
+                    nascimento: this.getNascimento(),
+                    nascionalidade: this.getNascionalidade(),
+                    altura: this.getAltura(),
+                    peso: this.getPeso
+                }
+            }
+        }     
+
+        var anderson = new jogador('Anderson moura')
+        anderson.setNascimento(new Date(2000, 02, 05));
+        anderson.setNacionalidade('Brasileiro');
+        anderson.setAltura(1.70);
+        anderson.setPeso(63.5);
+
+        if (typeof anderson.getDadosJogador() === 'object') {
+            console.log(anderson.getDadosJogador());
+        } else {
+            console.error('ERRO! algo não esta certo.')
+        }
+        
+
+    </script>
+</body>
+</html>
